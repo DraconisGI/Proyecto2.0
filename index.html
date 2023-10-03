@@ -14,7 +14,52 @@
   <section>
     <p>Esta página es de prueba, espero sea de su agrado</p>
   </section>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pgXpM4l_MwI?si=-_wIEcZkRMDkNTts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pgXpM4l_MwI?si=-_wIEcZkRMDkNTts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+  pip install Flask
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+
+def multiplicacion(a, b):
+    return a * b
+
+def division(a, b):
+    if b == 0:
+        return "No se puede dividir por cero."
+    return a / b
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/calcular', methods=['POST'])
+def calcular():
+    operacion = request.form['operacion']
+    num1 = float(request.form['num1'])
+    num2 = float(request.form['num2'])
+
+    if operacion == 'suma':
+        resultado = suma(num1, num2)
+    elif operacion == 'resta':
+        resultado = resta(num1, num2)
+    elif operacion == 'multiplicacion':
+        resultado = multiplicacion(num1, num2)
+    elif operacion == 'division':
+        resultado = division(num1, num2)
+    else:
+        resultado = 'Operación no válida'
+
+    return render_template('index.html', resultado=resultado)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
     <h1>Calculadora</h1>
     <form action="/calcular" method="post">
         <label for="num1">Número 1:</label>
