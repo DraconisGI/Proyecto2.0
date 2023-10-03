@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>calculadora simple</title>
+  <title>Calculadora Simple</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,32 +14,30 @@
   <section>
     <p>Esta página es de prueba, espero sea de su agrado</p>
   </section>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pgXpM4l_MwI?si=-_wIEcZkRMDkNTts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
-    <h1>Calculadora</h1>
-    <form action="/calcular" method="post">
-        <label for="num1">Número 1:</label>
-        <input type="number" id="num1" name="num1" step="0.01" required><br><br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pgXpM4l_MwI?si=-_wIEcZkRMDkNTts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
-        <label for="num2">Número 2:</label>
-        <input type="number" id="num2" name="num2" step="0.01" required><br><br>
+  <h1>Calculadora</h1>
+  <form action="/calcular" method="post">
+      <label for="num1">Número 1:</label>
+      <input type="number" id="num1" name="num1" step="0.01" required><br><br>
 
-        <label for="operacion">Operación:</label>
-        <select id="operacion" name="operacion" required>
-            <option value="suma">Suma</option>
-            <option value="resta">Resta</option>
-            <option value="multiplicacion">Multiplicación</option>
-            <option value="division">División</option>
-        </select><br><br>
+      <label for="num2">Número 2:</label>
+      <input type="number" id="num2" name="num2" step="0.01" required><br><br>
 
-        <input type="submit" value="Calcular">
-    </form>
+      <label for="operacion">Operación:</label>
+      <select id="operacion" name="operacion" required>
+          <option value="suma">Suma</option>
+          <option value="resta">Resta</option>
+          <option value="multiplicacion">Multiplicación</option>
+          <option value="division">División</option>
+      </select><br><br>
 
-<h2>Resultado: <span id="resultado"></span></h2>
-    </div>
-  </div>
+      <input type="submit" value="Calcular">
+  </form>
 
-  <script src="script.js"></script>
+  <h2>Resultado: <span id="resultado"></span></h2>
+
   <footer>
     <p>&copy; 2023 Mi Página GitHub</p>
   </footer>
